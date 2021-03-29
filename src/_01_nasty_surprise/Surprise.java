@@ -20,6 +20,8 @@ public class Surprise implements ActionListener {
 	public Surprise () {
 		window.add(panel);
 		window.setVisible(true);
+		panel.add(trick);
+		panel.add(treat);
 		trick.setText("Trick");
 		treat.setText("Treat");
 		window.pack();
@@ -30,10 +32,10 @@ public class Surprise implements ActionListener {
 	public void actionPerformed(ActionEvent arg0) {
 		// TODO Auto-generated method stub
 		if (arg0.getSource() == trick) {
-			showPictureFromTheInternet("https://www.google.com/imgres?imgurl=https%3A%2F%2Fi.ytimg.com%2Fvi%2F1ZJcfsUA-Xs%2Fhqdefault.jpg&imgrefurl=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3D1ZJcfsUA-Xs&tbnid=1Jp54ZaiSddzDM&vet=12ahUKEwj_p5bo3cTvAhUY66wKHSmfBEQQMygCegUIARDFAQ..i&docid=dF9ps-6lwOkyoM&w=480&h=360&q=cute%20monkeys&ved=2ahUKEwj_p5bo3cTvAhUY66wKHSmfBEQQMygCegUIARDFAQ");
+			showPictureFromTheInternet("https://i.pinimg.com/originals/84/91/bb/8491bbf75049ac2b8549a723d99f6858.jpg");
 			}
 		else {
-			showPictureFromTheInternet("");
+			showPictureFromTheInternet("https://i.kym-cdn.com/entries/icons/facebook/000/029/498/Frog_relaxing_0-9_screenshot.jpg");
 		}
 	}
 	private void showPictureFromTheInternet(String imageUrl) {
