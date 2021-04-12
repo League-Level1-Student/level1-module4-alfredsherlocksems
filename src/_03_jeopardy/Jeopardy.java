@@ -41,6 +41,8 @@ public class Jeopardy implements ActionListener {
 	private JLabel scoreBox = new JLabel("0");
 	private int buttonCount = 0;
 	private static Clip clip;
+	private int b1 = 0;
+	private int b2 = 0;
 	
 
 
@@ -117,15 +119,52 @@ public class Jeopardy implements ActionListener {
 		// If the buttonPressed was the firstButton
 		if (buttonPressed == firstButton) {
 			// Call the askQuestion() method
-			askQuestion("Is the actor Jack Black also a musician? (Yes or No)", "Yes", 100);
+			b1++;
+			if (b1 == 1) {
+				askQuestion("Is the actor Jack Black also a musician? (Yes or No)", "Yes", 100);
+				firstButton.setText("400");
+				
+			}
+			if (b1 == 2) {
+				askQuestion("Is Johnny Depp know as acting as a pirate or an astronaut?", "pirate", 400);
+				firstButton.setText("800");
+			}
+			if (b1 == 3) {
+				askQuestion("What show did Ted Danson star in?", "Cheers", 800);
+				firstButton.setText("1000");
+			}
+			if (b1 == 4) {
+				askQuestion("What Netflix show is the actor of Dr Strange from the MCU (Marvel Cinematic Universe) a leading character in?", "Sherlock", 1000);
+				firstButton.setText("You finished this section!");
+			}
+			
+			
+			
+			
 		// Complete the code in the askQuestion() method. When you play the game, the score should change.
 		}
 		// If the buttonPressed was the secondButton
-
+		if (secondButton == buttonPressed) {
+			b2++;
+			if (b2 == 1) {
+				askQuestion("Is Dwayne Johnson known as the boulder?", "No", 50);
+				secondButton.setText("200");
+			}
+			if (b2 == 2) {
+				askQuestion("What show did Matt LeBlanc star in?", "Friends", 200);
+				secondButton.setText("600");
+			}
+			if (b2 == 3) {
+				askQuestion("Who's Terry the Clown in Liv and Maddie?", "John Starr", 600);
+				secondButton.setText("You finished this section!");
+			}
 			// Call the askQuestion() method with a harder question
-
+			
+			
+			
 		// Clear the text on the button that was pressed (set the button text to nothing)
-
+			
+		}
 	}
 
 	private void askQuestion(String question, String correctAnswer, int prizeMoney) {
@@ -137,13 +176,11 @@ public class Jeopardy implements ActionListener {
 	if (clip != null) {
 		clip.stop();
 	}
-	JOptionPane.showMessageDialog(null, "The Jeopardy music should of stopped here.");
+	System.out.println("The Jeopardy music should of stopped here.");
 		// Stop the theme music when they have entered their response. Hint: use the sound variable 
-		if (q != "kjfsdjlkafsj;ja;lksjk;lkl;akkjdklf;sajkl;j") {
-			
-		}
+		
 		// If the answer is correct
-		if (q == correctAnswer) {
+		if (q.equals(correctAnswer)) {
 			// Increase the score by the prizeMoney
 			score =+ prizeMoney;
 			// Pop up a message to tell the user they were correct
