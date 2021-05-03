@@ -12,9 +12,8 @@ import javax.swing.JOptionPane;
 public class Magic8Ball {
 
 	// 1. Make a main method that includes all the steps below….
-	public static void main (String[] args) {
-		
 	
+		 public static void run () {
 	// 2. Make a variable that will hold a random number and put a random number into this variable using "new Random().nextInt(4)"
 		int ran = new Random().nextInt(4);
 	// 3. Print out this variable
@@ -45,6 +44,10 @@ public class Magic8Ball {
 	// -- write your own answer
 		JOptionPane.showMessageDialog(null, "Ask someone if you want.");
 		}
-	}
-
+		}
+	
+public static void main (String[] args) {
+	run();
 }
+}
+
