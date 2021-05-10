@@ -12,8 +12,8 @@ import javax.swing.JTextField;
 public class Calculator implements ActionListener {
 	JFrame frame = new JFrame();
 	JPanel panel = new JPanel();
-	JTextField num1 = new JTextField(10);
-	JTextField num2 = new JTextField(10);
+	JTextField digit1 = new JTextField(10);
+	JTextField digit2 = new JTextField(10);
 	JButton add = new JButton();
 	JButton subtract = new JButton();
 	JButton multiply = new JButton();
@@ -23,8 +23,8 @@ public class Calculator implements ActionListener {
 		frame.setVisible(true);
 		frame.setSize(200, 200);
 		frame.add(panel);
-		panel.add(num1);
-		panel.add(num2);
+		panel.add(digit1);
+		panel.add(digit2);
 		panel.add(add);
 		panel.add(subtract);
 		panel.add(multiply);
@@ -38,34 +38,44 @@ public class Calculator implements ActionListener {
 		subtract.setText("subtract");
 		multiply.setText("multiply");
 		divide.setText("divide");
+		answer.setText("0");
 		frame.pack();
 	}
-	void add() {
-		
+	int add(int num1, int num2) {
+		return num1 + num2;
 	}
-	void subtract() {
-		
+	
+	int subtract(int num1, int num2) {
+		return num1 - num2;
 	}
-	void divide() {
-		
+
+	int multiply (int num1, int num2) {
+		return num1 * num2;
 	}
-	void multiply() {
-		
+
+	int divide(int num1, int num2) {
+		return num1 / num2;
 	}
+	
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		// TODO Auto-generated method stub
+		int num1 = Integer.parseInt(digit1.getText());
+		int num2 = Integer.parseInt(digit2.getText());
+		String bob = "0";
 		if (arg0.getSource() == add) {
-			add();
+			bob = "" + add(num1, num2);
 		}
 		if (arg0.getSource() == subtract) {
-			subtract();
+			bob = "" + subtract(num1, num2);
 		}
 		if (arg0.getSource() == multiply) {
-			multiply();
+			bob = "" + multiply(num1, num2);
 		}
 		if (arg0.getSource() == divide) {
-			divide();
+			bob = "" + divide(num1, num2);
 		}
+		answer.setText(bob);
+		frame.pack();
 	}
 }
