@@ -7,12 +7,14 @@ import java.util.Random;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 public class WackAMole implements ActionListener {
 	public JFrame frame = new JFrame();
 	public JPanel panel = new JPanel();
 	JButton moleButton;
+	public int timesMissed;
 	
 	public void start () {
 		frame.setVisible(true);
@@ -43,9 +45,15 @@ public class WackAMole implements ActionListener {
 			frame.remove(panel);
 			panel = new JPanel();
 			start();
+			System.out.println("Nice!");
 		}
 		else {
 			System.out.println("missed");
+			timesMissed++;
+			if (timesMissed == 5) {
+				JOptionPane.showMessageDialog(null, "You missed 5 times -- game over.");
+				System.exit(0);
+			}
 	}
 }
 }
